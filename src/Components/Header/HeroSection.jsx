@@ -29,6 +29,8 @@ const HeroSection = () => {
         </div>
       </section>
       {/* Book */}
+        <h2 className="text-2xl mt-10 md:text-4xl text-center font-bold">Books</h2>
+      <div> </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9 my-10">
         {books.map((book) => (
           <Books book={book} key={book.bookId}></Books>

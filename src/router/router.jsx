@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "../Pages/Root/Root";
 import HeroSection from "../Components/Header/HeroSection";
 import ErrorPage from "../Pages/ErrorPages/ErrorPage";
+import UserDetails from "../Components/UserDetails/UserDetails";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,11 @@ const router = createBrowserRouter([
       {
         path: "*",
         Component: ErrorPage,
+      },
+      {
+        path: "userDetails/:userId",
+        loader: ({ params }) => fetch("booksData.json"),
+        Component: UserDetails,
       },
     ],
   },

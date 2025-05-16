@@ -23,7 +23,7 @@ const Navbar = () => {
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink
-            href="#"
+            to="/"
             className="text-green-600 font-semibold border border-green-500 px-4 py-1 rounded-md"
           >
             Home
@@ -53,12 +53,12 @@ const Navbar = () => {
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
           <div className="absolute top-14 left-4 bg-white rounded-md shadow-md p-4 space-y-2 z-50 md:hidden">
-            <a
-              href="#"
+            <NavLink
+              to="/"
               className="block text-green-600 font-semibold border border-green-500 px-4 py-1 rounded-md"
             >
               Home
-            </a>
+            </NavLink>
             <a href="#" className="block text-gray-700">
               Listed Books
             </a>
