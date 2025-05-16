@@ -8,13 +8,13 @@ const Books = ({ book }) => {
     bookName,
     author,
     image,
-    review,
-    totalPages,
+    // review,
+    // totalPages,
     rating,
     category,
     tags,
-    publisher,
-    yearOfPublishing,
+    // publisher,
+    // yearOfPublishing,
   } = book;
   return (
     <Link to={`userDetails/${bookId}`}>

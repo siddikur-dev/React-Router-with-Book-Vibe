@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("booksData.json"),
+        loader: () => fetch("../booksData.json"),
         Component: HeroSection,
       },
       {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "userDetails/:userId",
-        loader: ({ params }) => fetch("booksData.json"),
+        loader: () => fetch("../booksData.json"),
         Component: UserDetails,
       },
     ],
