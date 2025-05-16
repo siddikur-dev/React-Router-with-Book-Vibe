@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 const ErrorPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <section className="flex items-center h-full sm:p-16 bg-gray-50 text-gray-800">
@@ -35,8 +38,8 @@ const ErrorPage = () => {
           </p>
           <a
             rel="noopener noreferrer"
-            href="#"
-            className="px-8 py-3 font-semibold rounded bg-sky-600 text-gray-50"
+            onClick={() => navigate(-1)}
+            className="px-8 py-3 font-semibold cursor-pointer rounded bg-sky-600 text-gray-50"
           >
             Back to homepage
           </a>
