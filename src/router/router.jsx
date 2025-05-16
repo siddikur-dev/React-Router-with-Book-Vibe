@@ -10,10 +10,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: () => fetch("booksData.json"),
         Component: HeroSection,
       },
       {
-        path: "r",
+        path: "*",
         Component: ErrorPage,
       },
     ],

@@ -16,7 +16,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo */}
-        <div className="text-xl font-bold mx-auto md:mx-0 md:text-xl">
+        <div className="text-xl font-bold mx-auto md:mx-0 md:text-2xl">
           Book Vibe
         </div>
 
