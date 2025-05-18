@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { addToStoredDB, addToWhitelistDB } from "../Utility/AddToDB";
+import { Bounce, ToastContainer, toast } from "react-toastify";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -21,6 +22,17 @@ const BookDetails = () => {
   } = singleBook;
   // handleMarkRead Function
   const handleMarkAsRead = (userId) => {
+    toast.warn(" Already Added Bro", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
     addToStoredDB(userId);
   };
   // handleWhiteList Function
@@ -38,6 +50,7 @@ const BookDetails = () => {
         />
       </div>
 
+      <ToastContainer />
       {/* Book Info */}
       <div className="w-full md:w-2/3 space-y-4">
         <h2 className="text-2xl font-bold">{bookName}</h2>

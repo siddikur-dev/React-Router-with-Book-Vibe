@@ -24,8 +24,6 @@ const addToWhitelistDB = (userId) => {
 
   if (storedWhitelistBook.includes(userId)) {
     console.log("hello");
-
-    alert("bhai ei id already exists");
   } else {
     storedWhitelistBook.push(userId);
     const data = JSON.stringify(storedWhitelistBook);
@@ -38,7 +36,6 @@ const addToStoredDB = (userId) => {
 
   if (storedBookData.includes(userId)) {
     console.log("hello");
-    alert("bhai ei id already exists");
   } else {
     storedBookData.push(userId);
     const data = JSON.stringify(storedBookData);
