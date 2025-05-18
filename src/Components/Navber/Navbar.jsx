@@ -24,17 +24,20 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink
             to="/"
-            className="text-green-600 font-semibold border border-green-500 px-4 py-1 rounded-md"
+            className="text-gray-700 hover:border hover:border-green-500  font-semibold px-4 py-1 rounded-md"
           >
             Home
           </NavLink>
           <NavLink
-            to="rs"
+            to="listedBooks"
             className="text-gray-700 hover:border hover:border-green-500  font-semibold px-4 py-1 rounded-md"
           >
             Listed Books
           </NavLink>
-          <NavLink to="/r" className="text-gray-700 font-semibold">
+          <NavLink
+            to="/r"
+            className="text-gray-700 hover:border hover:border-green-500  font-semibold px-4 py-1 rounded-md"
+          >
             Pages to Read
           </NavLink>
         </nav>
@@ -59,12 +62,12 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <a href="#" className="block text-gray-700">
+            <NavLink to="listedBooks" className="block text-gray-700">
               Listed Books
-            </a>
-            <a href="#" className="block text-gray-700">
+            </NavLink>
+            <NavLink to={``} className="block text-gray-700">
               Pages to Read
-            </a>
+            </NavLink>
           </div>
         )}
       </header>

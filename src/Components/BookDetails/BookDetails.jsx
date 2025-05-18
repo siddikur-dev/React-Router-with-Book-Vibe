@@ -1,11 +1,12 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addToStoredDB, addToWhitelistDB } from "../Utility/AddToDB";
 
-const UserDetails = () => {
-  const { userId } = useParams();
-  const bookId = parseInt(userId);
+const BookDetails = () => {
+  const { bookId } = useParams();
+  const bookID = parseInt(bookId);
   const data = useLoaderData();
-  const singleBook = data.find((book) => book.bookId === bookId);
+  const singleBook = data.find((book) => book.bookId === bookID);
   const {
     bookName,
     author,
@@ -18,7 +19,14 @@ const UserDetails = () => {
     publisher,
     yearOfPublishing,
   } = singleBook;
-
+  // handleMarkRead Function
+  const handleMarkAsRead = (userId) => {
+    addToStoredDB(userId);
+  };
+  // handleWhiteList Function
+  const handleWhiteList = (userId) => {
+    addToWhitelistDB(userId);
+  };
   return (
     <div className="flex flex-col md:flex-row gap-8 p-6 bg-white rounded-lg shadow-md max-w-5xl mx-auto">
       {/* Book Image */}
@@ -64,11 +72,17 @@ const UserDetails = () => {
         </div>
 
         <div className="flex gap-3 mt-6">
-          <button className="px-5 py-2 bg-gray-200 text-gray-800 rounded-md font-medium hover:bg-gray-300">
-            Read
+          <button
+            onClick={() => handleMarkAsRead(bookId)}
+            className="btn px-5 py-2 bg-gray-200 text-gray-800 rounded-md font-medium hover:bg-gray-300"
+          >
+            Mark As Read
           </button>
-          <button className="px-5 py-2 bg-sky-400 text-white rounded-md font-medium hover:bg-sky-500">
-            Wishlist
+          <button
+            onCanPlay={() => handleWhiteList(bookId)}
+            className="btn px-5 py-2 bg-sky-400 text-white rounded-md font-medium hover:bg-sky-500"
+          >
+            Add To Wishlist
           </button>
         </div>
       </div>
@@ -76,4 +90,4 @@ const UserDetails = () => {
   );
 };
 
-export default UserDetails;
+export default BookDetails;

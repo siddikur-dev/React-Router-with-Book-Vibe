@@ -2,7 +2,9 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "../Pages/Root/Root";
 import HeroSection from "../Components/Header/HeroSection";
 import ErrorPage from "../Pages/ErrorPages/ErrorPage";
-import UserDetails from "../Components/UserDetails/UserDetails";
+import BookDetails from "../Components/BookDetails/BookDetails";
+import ListedBooks from "../Pages/ReadList/ListedBooks";
+import ListedBook from "../Pages/ReadList/ListedBook";
 
 const router = createBrowserRouter([
   {
@@ -15,13 +17,23 @@ const router = createBrowserRouter([
         Component: HeroSection,
       },
       {
+        path: "listedBooks",
+        loader: () => fetch("../booksData.json"),
+        Component: ListedBooks,
+      },
+      // {
+      //   path: "listedBook/:bookId",
+      //   loader: () => fetch("../booksData.json"),
+      //   Component: ListedBook,
+      // },
+      {
         path: "*",
         Component: ErrorPage,
       },
       {
-        path: "userDetails/:userId",
+        path: "bookDetails/:bookId",
         loader: () => fetch("../booksData.json"),
-        Component: UserDetails,
+        Component: BookDetails,
       },
     ],
   },
