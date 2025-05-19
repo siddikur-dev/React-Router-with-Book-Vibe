@@ -3,19 +3,7 @@ import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router";
 
 const Books = ({ book }) => {
-  const {
-    bookId,
-    bookName,
-    author,
-    image,
-    // review,
-    // totalPages,
-    rating,
-    category,
-    tags,
-    // publisher,
-    // yearOfPublishing,
-  } = book;
+  const { bookId, bookName, author, image, rating, category, tags } = book;
   return (
     <div className=" container mx-auto border border-gray-300 rounded-xl w- p-4  shadow-sm  ">
       {/* Book Image */}
