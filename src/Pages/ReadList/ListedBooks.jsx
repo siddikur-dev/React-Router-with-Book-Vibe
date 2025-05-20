@@ -8,6 +8,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Books from "../Books/Books";
 import ListedBook from "./ListedBook";
+import { Helmet } from "react-helmet-async";
 const ListedBooks = () => {
   const data = useLoaderData();
   const [sort, setSort] = useState("");
@@ -45,6 +46,9 @@ const ListedBooks = () => {
   };
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title> Book Vibe || Listed Books</title>
+      </Helmet>
       {/* Dropdown sortList */}
       <div className="dropdown flex justify-center my-4">
         <div tabIndex={0} className="btn btn-accent m-1">
