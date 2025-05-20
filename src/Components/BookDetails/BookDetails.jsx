@@ -22,7 +22,7 @@ const BookDetails = () => {
   } = singleBook;
   // handleMarkRead Function
   const handleMarkAsRead = (userId) => {
-    toast.warn(" Already Added Bro", {
+    toast.warn("  Added Bro", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,

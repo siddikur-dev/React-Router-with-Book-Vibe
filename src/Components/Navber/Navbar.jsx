@@ -55,17 +55,26 @@ const Navbar = () => {
 
         {/* Mobile Dropdown Menu */}
         {menuOpen && (
-          <div className="absolute top-14 left-4 bg-white rounded-md shadow-md p-4 space-y-2 z-50 md:hidden">
+          <div className="absolute top-16 left-4 right-4 bg-white rounded-lg shadow-lg p-5 space-y-3 z-50 md:hidden transition-all duration-300">
             <NavLink
               to="/"
-              className="block text-green-600 font-semibold border border-green-500 px-4 py-1 rounded-md"
+              className="block text-gray-800 font-medium px-4 py-2 rounded hover:bg-green-100 transition"
+              onClick={() => setMenuOpen(false)}
             >
               Home
             </NavLink>
-            <NavLink to="listedBooks" className="block text-gray-700">
+            <NavLink
+              to="/listedBooks"
+              className="block text-gray-800 font-medium px-4 py-2 rounded hover:bg-green-100 transition"
+              onClick={() => setMenuOpen(false)}
+            >
               Listed Books
             </NavLink>
-            <NavLink to={``} className="block text-gray-700">
+            <NavLink
+              to="/a"
+              className="block text-gray-800 font-medium px-4 py-2 rounded hover:bg-green-100 transition"
+              onClick={() => setMenuOpen(false)}
+            >
               Pages to Read
             </NavLink>
           </div>
