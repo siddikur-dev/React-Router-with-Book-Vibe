@@ -16,7 +16,7 @@ const HeroSection = () => {
       book.bookName.toLowerCase().includes(searchText.toLowerCase())
     );
     setFilteredBooks(searchResult);
-    setShowAll(true);
+    setShowAll(!showAll);
   }, [searchText, books]);
 
   const visibleBooks = showAll ? filteredBooks : filteredBooks.slice(0, 6);

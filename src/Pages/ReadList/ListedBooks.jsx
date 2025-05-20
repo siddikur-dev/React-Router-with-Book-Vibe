@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
-import { getStoredBook } from "../../Components/Utility/AddToDB";
+import {
+  getStoredBook,
+  getWhitelistBook,
+} from "../../Components/Utility/AddToDB";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Books from "../Books/Books";
@@ -10,6 +13,15 @@ const ListedBooks = () => {
   const [sort, setSort] = useState("");
   const [readList, setReadList] = useState([]);
 
+  // whitelist function
+  const whitelistBook = () => {
+    const bookWhitelistData = getWhitelistBook();
+    const convertedWhitelistBook = bookWhitelistData.map((id) => parseInt(id));
+    const myWhiteList = data.filter((book) =>
+      convertedWhitelistBook.includes(book.bookId)
+    );
+    setReadList(myWhiteList);
+  };
   useEffect(() => {
     const bookStoreData = getStoredBook();
     const convertedStoreBook = bookStoreData.map((id) => parseInt(id));

@@ -9,14 +9,8 @@ const getStoredBook = () => {
 };
 
 // getWhiteListBook
-const getWhitelistBook = () => {
-  const storedBookSTR = localStorage.getItem("whitelist");
-  if (storedBookSTR) {
-    const storedBookData = JSON.parse(storedBookSTR);
-    return storedBookData;
-  } else {
-    return [];
-  }
+const getWhitelistBook = ({ readList }) => {
+  console.log(readList);
 };
 //getWhiteListBook
 const addToWhitelistDB = (userId) => {
@@ -43,4 +37,4 @@ const addToStoredDB = (userId) => {
   }
 };
 
-export { addToStoredDB, getStoredBook, addToWhitelistDB };
+export { addToStoredDB, getStoredBook, getWhitelistBook, addToWhitelistDB };
